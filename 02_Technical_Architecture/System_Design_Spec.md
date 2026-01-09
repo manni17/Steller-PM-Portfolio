@@ -15,16 +15,16 @@
 
 ```mermaid
 graph TD
-    Client[Partner Application] -->|HTTPS/REST| LB[Nginx / API Gateway]
-    LB -->|Orders| API_Prod[Steller Consumer API]
-    LB -->|Admin| API_Core[Steller Admin API]
+    Client["Partner Application"] -->|HTTPS/REST| LB["Nginx / API Gateway"]
+    LB -->|Orders| API_Prod["Steller Consumer API"]
+    LB -->|Admin| API_Core["Steller Admin API"]
     
     subgraph "Private Network (Docker)"
-        API_Prod -->|Publish| MQ[RabbitMQ (Exchange)]
-        MQ -->|Consume| Worker[Order Processor Service]
-        Worker -->|HTTPS| Bamboo[Bamboo External API]
+        API_Prod -->|Publish| MQ["RabbitMQ (Exchange)"]
+        MQ -->|Consume| Worker["Order Processor Service"]
+        Worker -->|HTTPS| Bamboo["Bamboo External API"]
         
-        API_Prod -->|Read/Write| DB[(PostgreSQL 16)]
+        API_Prod -->|Read/Write| DB[("PostgreSQL 16")]
         Worker -->|Read/Write| DB
     end
 ```
