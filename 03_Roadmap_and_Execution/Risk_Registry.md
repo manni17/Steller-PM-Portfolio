@@ -12,21 +12,28 @@ This document identifies potential threats to the Steller platform and defines t
 
 | ID | Risk Category | Description | Impact | Probability | Mitigation Strategy (The "How") |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **R-01** | **Dependency** | Upstream provider (Bamboo API) downtime or severe latency. | High | Medium | **Asynchronous Queueing:** Orders are accepted and stored in RabbitMQ immediately. A 3-retry policy handles transient failures without user intervention. |
-| **R-02** | **Financial** | Price Volatility: Supplier cost exceeds selling price before catalog sync. | High | Low | **Price Guardrail Service:** A validation check ensures `SupplierCost < SellingPrice` before order fulfillment. Failure triggers an automatic "Kill Switch" for the item. |
-| **R-03** | **Security** | PII/Secret Leakage: Exposure of Card PINs or Partner API Keys via DB leak. | Critical | Low | **Encryption at Rest:** Implementation of "Blind Storage" policy. Sensitive fields are encrypted at the application layer before database persistence. |
-| **R-04** | **Regulatory** | AML/Fraud: Exploitation of gift card liquidity for money laundering. | Critical | Low | **Velocity Limits:** Enforced rate limiting and volume caps per partner. Transactions exceeding $10k/day trigger manual audit flags. |
-| **R-05** | **Operational** | Environment Drift: Discrepancies between local dev and production environments. | Medium | High | **Infrastructure as Code:** Unified Docker Compose deployment ensures dev/prod parity and eliminates "works on my machine" bottlenecks. |
+| **R-01** | **Human Capital** | **Knowledge Silo / Bus Factor:** The platform was built by a single developer in a high-risk zone (Sudan). Loss of this resource would render the codebase unmaintainable. | Critical | High | **AI-Driven Knowledge Extraction:** Utilized AI Agents to reverse-engineer the codebase, generate system maps, and establish a "Local Twin" environment, decoupling business continuity from specific personnel. |
+| **R-02** | **Dependency** | Upstream provider (Bamboo API) downtime or severe latency. | High | Medium | **1. Technical:** RabbitMQ "Store and Forward" for transient failures. <br> **2. Strategic:** Multi-sourcing strategy (Supplier B & C integration in progress). <br> **3. Operational:** Buffer Stock policy for top 2 high-volume SKUs to bypass API dependency during outages. |
+| **R-03** | **Financial** | Price Volatility: Supplier cost exceeds selling price before catalog sync. | High | Low | **Price Guardrail Service:** A validation check ensures `SupplierCost < SellingPrice` before order fulfillment. Failure triggers an automatic "Kill Switch" for the item. |
+| **R-04** | **Security** | PII/Secret Leakage: Exposure of Card PINs or Partner API Keys via DB leak. | Critical | Low | **Encryption at Rest:** Implementation of "Blind Storage" policy. Sensitive fields are encrypted at the application layer before database persistence. |
+| **R-05** | **Regulatory** | AML/Fraud: Exploitation of gift card liquidity for money laundering. | Critical | Low | **Velocity Limits:** Enforced rate limiting and volume caps per partner. Transactions exceeding $10k/day trigger manual audit flags. |
+| **R-06** | **Operational** | Environment Drift: Discrepancies between local dev and production environments. | Medium | High | **Infrastructure as Code:** Unified Docker Compose deployment ensures dev/prod parity and eliminates "works on my machine" bottlenecks. |
 
 ---
 
 ## 🛡️ Mitigation Deep Dive
 
-### 1. The "Price Guardrail" (Financial Risk)
+### 1. Operational Resilience (Human Capital Risk)
+Facing extreme volatility in the development team (due to geopolitical instability), we mitigated the "Bus Factor" by treating **AI as the Interim Tech Lead**.
+*   **Reverse Engineering:** Used AI agents to inspect the live VPS and map the undocumented architecture.
+*   **Local Replication:** Created a "Digital Twin" of the production environment on a local machine, ensuring the business retains ownership of the IP regardless of developer availability.
+*   **Automated Documentation:** Generated comprehensive API schemas and System Diagrams to lower the barrier to entry for future hires from months to days.
+
+### 2. The "Price Guardrail" (Financial Risk)
 To prevent revenue leakage, the system does not trust stale catalog data for real-time transactions. During the order fulfillment phase (Consumer API), the system performs a final validation of the current margin. If the margin is negative due to a supplier price hike, the transaction is halted, and a "Price Anomaly" alert is sent to the Admin Dashboard.
 
-### 2. Transactional Reliability (Dependency Risk)
+### 3. Transactional Reliability (Dependency Risk)
 Leveraging the **Adapter Pattern** and **MassTransit/RabbitMQ**, Steller decouples the customer's request from the supplier's response. This "Store and Forward" mechanism ensures that even if Bamboo is undergoing maintenance, the customer's intent is captured and fulfilled automatically once connectivity is restored.
 
-### 3. Security Hardening (Information Risk)
+### 4. Security Hardening (Information Risk)
 Moving away from the original prototype's plain-text storage, the platform now utilizes environment-injected secrets. All sensitive identifiers (PINs) are treated as "Black Box" data—Steller facilitates the delivery but does not "know" the PIN in a readable format within the persistence layer.

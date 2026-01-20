@@ -31,27 +31,27 @@
 
 | ID | Feature | User Story | Priority | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **OM-01** | **API Order Placement** | As a Partner System, I want to POST an order and receive an immediate `201 Created` (Async) response. | **P0** | `[ ]` |
+| **OM-01** | **API Order Placement** | As a Partner System, I want to POST an order and receive an immediate `201 Created` (Async) response. | **P0** | `[🟡]` |
 | **OM-02** | **Resilient Processing** | As a System, I want to retry failed upstream orders (3x at 30s intervals) via RabbitMQ to handle transient network failures. | **P0** | `[ ]` |
 | **OM-03** | **Blind PIN Storage** | As a Security Engineer, I want to ensure sensitive Card PINs are never stored in plain text in the database (Encryption at Rest). | **P0** | `[ ]` |
 | **OM-04** | **Order Status Webhook** | As a Partner, I want to receive a webhook notification when an Async order transitions to `COMPLETED`. | **P2** | `[ ]` |
 
-## 🟣 Module D: Identity & Platform Access
-**Goal:** Secure the platform against unauthorized access.
+## ⚪ Module E: Quality & Reliability (Systemic Debt)
+**Goal:** Ensure long-term stability via automated regression and environment parity.
 
 | ID | Feature | User Story | Priority | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **IA-01** | **Admin Authentication** | As an Admin, I want to log in via JWT-based authentication with session timeout enforcement. | **P0** | `[ ]` |
-| **IA-02** | **Role-Based Access** | As a Super Admin, I want to assign `Read-Only` vs `Full-Access` roles to internal staff. | **P1** | `[ ]` |
-| **IA-03** | **Password Recovery** | As a User, I want a secure email-based password reset flow (no temporary passwords in email). | **P1** | `[ ]` |
+| **QA-01** | **Black-Box Suite** | As a PM, I want a scriptable test runner to verify core flows (Login/Order) without manual interaction. | **P0** | `[✅]` |
+| **QA-02** | **Service Mocks** | As a System, I want to simulate external dependencies (Bamboo API) to ensure deterministic test results. | **P1** | `[ ]` |
+| **QA-03** | **Data Seeding** | As a Developer, I want automated "Fresh Data" injection before each test run to prevent state pollution. | **P1** | `[ ]` |
 
 ---
 
 ## 📅 Roadmap Phases
 
-### Phase 1: MVP (Launch Candidate)
-*   Focus: PM-01, OM-01, OM-02, IA-01.
-*   Goal: End-to-end "Happy Path" transaction success.
+### Phase 1: MVP & Reliability (Launch Candidate)
+*   Focus: PM-01, OM-01, QA-01, IA-01.
+*   Goal: Stabilized environment with automated "Happy Path" verification.
 
 ### Phase 2: Revenue & Risk (Optimization)
 *   Focus: PM-02, GC-02, GC-01.
