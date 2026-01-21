@@ -37,3 +37,24 @@ This retrospective evaluates the architectural and strategic decisions made duri
 
 1.  **Dynamic Monetization:** Transition from static commission configurations to a **Tiered Pricing Model** based on partner volume to incentivize growth.
 2.  **Observability:** Implement distributed tracing (OpenTelemetry) to visualize the exact latency contribution of each microservice hop.
+
+## 5. Methodology Deep-Dive: The "Integration Gap" Analysis
+
+*This section documents the specific PM framework applied to evaluate the system status at the end of Phase 2.*
+
+### The "Last Mile" Problem
+In professional product management, we identified a specific gap: **"Functionally Complete, Operationally Unverified."**
+While the individual components (Engine) were robustly tested, the end-to-end flow (The Car) had not been proven in a live environment. We classify this as **Integration Risk**.
+
+### Remediation Strategy: The "Walking Skeleton"
+To prevent this "Late Stage Integration" risk in future initiatives, Steller will adopt the **Walking Skeleton** methodology:
+1.  **Day 1 Validation:** Before writing complex logic, establish a "Hello World" trace that touches every system boundary (Frontend -> API -> Queue -> Worker -> DB).
+2.  **Proof of Wiring:** Verify connectivity and permissions first, adding business logic "flesh" to the skeleton only after the "bones" are proven to move.
+
+### Estimation Framework (The x3 Rule)
+For the Phase 3 Integration Spike, we apply the **x3 Estimation Rule** to account for unknown unknowns:
+*   **x1** for Configuration (Docker/Ports).
+*   **x1** for Data Contracts (Serialization/Case Sensitivity).
+*   **x1** for "Ghost" Bugs (Latency/Race Conditions).
+
+**Verdict:** The project is marked **"Ready for UAT,"** shifting the burden of proof from Unit Tests (Code) to System Tests (Integration).

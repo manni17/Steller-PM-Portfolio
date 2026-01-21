@@ -72,3 +72,8 @@
 ### Phase 3: Enterprise Scale
 *   Focus: OM-04, IA-02.
 *   Goal: Support high-volume partners with webhooks and RBAC.
+
+### 🟡 Integration Spike (Priority Immediate)
+| ID | Feature | User Story | Priority | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **SP-01** | **End-to-End Verification** | **SPIKE:** Establish a successful "Hello World" flow from Frontend -> StellerConsumer -> RabbitMQ -> Steller.Api to verify "Last Mile" wiring. | **P0** | `[ ]` |
