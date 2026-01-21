@@ -102,6 +102,11 @@
 *   **The Finding:** Discovered a logic bug where `RequestId` was being overwritten by external vendor data.
 *   **PM Lesson:** **Business Impact Translation.** Translated a "minor field overwrite" into a "Critical Financial Liability" (double-billing risk). This framing secured the resources to fix the root cause immediately.
 
+### 4. Visualizing the Unknown (Communication)
+*   **The Scenario:** Stakeholders needed to understand *why* the project wasn't ready for launch despite 100% test pass rates.
+*   **The Decision:** Created a Color-Coded Architecture Map (`COMPLETE_ARCHITECTURE_MAP.html`) explicitly marking the Consumer API as "Red/Unverified" vs the Backend "Green/Verified."
+*   **PM Lesson:** **Strategic Communication.** A diagram that exposes "Blind Spots" is more powerful than a verbal warning. It shifted the conversation from "Why are we delayed?" to "How do we turn Red to Green?"
+
 ---
 
 ## Summary Elevator Pitch
