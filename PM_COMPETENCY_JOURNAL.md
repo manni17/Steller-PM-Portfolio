@@ -109,5 +109,19 @@
 
 ---
 
+## Session 7: Test Strategy (Greenfield vs. Brownfield)
+**Date:** January 19, 2026 (Continued)
+**Theme:** "Strategic Triage" - Choosing the right test pattern for the product stage.
+
+### 1. Greenfield vs. Brownfield Testing
+*   **The Scenario:** Evaluated whether we should have used an end-to-end "Tracer Bullet" (Walking Skeleton) from the start.
+*   **The Decision:** Intentionally prioritized **Component Stabilization** (Isolation) for the legacy "Ferrari" backend.
+*   **PM Lesson:** **Contextual Strategy.** 
+    *   **Greenfield (New):** Use Tracer Bullets to prove connectivity in week 1. 
+    *   **Brownfield (Rescue):** Stabilize the "Engine" in isolation first. Firing a tracer bullet through a broken system leads to "Infrastructure Ghost" debugging where you can't tell if the logic is wrong or the pipes are leaking.
+*   **Outcome:** We avoided weeks of setup-frustration by proving the backend logic was 100% reliable *before* attempting the high-risk integration phase.
+
+---
+
 ## Summary Elevator Pitch
 > "Across the Steller transformation, I have consistently applied **Systems Thinking** to move the platform from a fragile 'Ferrari' to a reliable 'Toyota.' Facing extreme volatility, I first utilized AI to reverse-engineer and document the system, securing business continuity against geopolitical risks. I then led strategic pivots from over-engineered microservices to unified orchestration, established a 'Working Backwards' roadmap through the PR/FAQ framework, and implemented a rigorous Automated Quality Gate. By prioritizing long-term stability and security over tactical patches, I reduced deployment time by 85% and ensured 100% transactional reliability for our fintech partners."
