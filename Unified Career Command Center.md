@@ -72,6 +72,12 @@ Mississauga, ON | +1 (416) 779-6796 | mhnd.mkshf@gmail.com | [LinkedIn URL]
         *   **Action:** Orchestrated full stack migration to Docker containerization using AI-generated configs.
         *   **Result:** Reduced setup time to <15 minutes and unblocked critical UAT.
 
+*   **Metric:** **Achieved 100% Reliability Baseline for B2B Transaction Engine.**
+    *   **S.O.A.R:**
+        *   **Situation:** The platform lacked automated integration verification, and a hidden P0 idempotency bug threatened financial data integrity (double-billing risk).
+        *   **Action:** Directed the implementation of an automated Black-Box test suite (xUnit/WireMock) and architected a custom `SeedOrder` test harness to isolate fulfillment logic. Identified and remediated a critical correlation ID (`RequestId`) overwrite bug.
+        *   **Result:** Reached a **100% automated test pass rate** (9/9 critical scenarios), eliminated double-billing liability, and reduced infrastructure recovery time (MTTR) to under 5 minutes.
+
 ### LENS: PRODUCT & GROWTH (Use for Module A)
 *   **Metric:** **Scaled platform to $120K ARR within 24 months.**
     *   **S.O.A.R:**

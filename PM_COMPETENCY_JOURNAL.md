@@ -84,5 +84,25 @@
 
 ---
 
+## Session 6: The "Toyota" Reliability Milestone
+**Date:** January 19, 2026
+**Theme:** "Evidence over Assumptions" - Closing the Reliability Gap.
+
+### 1. Forensic Validation (The PM Audit Trail)
+*   **The Scenario:** Tests passed, but I needed to prove they weren't "shallow" passes.
+*   **The Decision:** Demanded a forensic audit of system logs. Verified that xUnit assertions correlated with real PostgreSQL `UPDATE` commands and WireMock `GET` calls.
+*   **PM Lesson:** **Trust but Verify.** In Fintech, a green checkmark is not enough. You must prove the *side effects* (database state change) to ensure financial integrity.
+
+### 2. Identifying Integration Risk (The "Last Mile")
+*   **The Scenario:** Achieved 100% pass rate by using a test harness to bypass the front-end API.
+*   **The Decision:** Classified the remaining work as "Integration Risk" rather than "Cleanup."
+*   **PM Lesson:** **Strategic Transparency.** A Senior PM acknowledges when a system is "Functionally Complete but Operationally Unverified." This prevents premature launches and manages stakeholder expectations.
+
+### 3. Fixing the Idempotency "Ghost"
+*   **The Finding:** Discovered a logic bug where `RequestId` was being overwritten by external vendor data.
+*   **PM Lesson:** **Business Impact Translation.** Translated a "minor field overwrite" into a "Critical Financial Liability" (double-billing risk). This framing secured the resources to fix the root cause immediately.
+
+---
+
 ## Summary Elevator Pitch
 > "Across the Steller transformation, I have consistently applied **Systems Thinking** to move the platform from a fragile 'Ferrari' to a reliable 'Toyota.' Facing extreme volatility, I first utilized AI to reverse-engineer and document the system, securing business continuity against geopolitical risks. I then led strategic pivots from over-engineered microservices to unified orchestration, established a 'Working Backwards' roadmap through the PR/FAQ framework, and implemented a rigorous Automated Quality Gate. By prioritizing long-term stability and security over tactical patches, I reduced deployment time by 85% and ensured 100% transactional reliability for our fintech partners."
