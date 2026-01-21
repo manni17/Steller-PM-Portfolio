@@ -24,8 +24,8 @@
 
 | ID | Feature | User Story | Priority | Release | Status | Dependencies |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **SP-01** | **End-to-End Verification** | **SPIKE:** Establish a successful "Hello World" flow from Frontend -> StellerConsumer -> RabbitMQ -> Steller.Api to verify "Last Mile" wiring. | **P0** | `v1.0-RC` | `[ ]` | Blocked by: None |
-| **OM-05** | **Consumer API Ingestion** | As a Partner System, I want to hit the `StellerConsumer` API endpoint and have it successfully publish a message to RabbitMQ. | **P0** | `v1.0-RC` | `[ ]` | Blocked by: SP-01 |
+| **SP-01** | **End-to-End Verification** | **SPIKE:** Establish a successful "Hello World" flow from Frontend -> StellerConsumer -> RabbitMQ -> Steller.Api to verify "Last Mile" wiring. | **P0** | `v1.0-RC` | `[✅]` | 2026-01-21 | Blocked by: None |
+| **OM-05** | **Consumer API Ingestion** | As a Partner System, I want to hit the `StellerConsumer` API endpoint and have it successfully publish a message to RabbitMQ. | **P0** | `v1.0-RC` | `[✅]` | 2026-01-21 | Blocked by: SP-01 |
 
 ## 🟢 Module A: Partner Management (B2B Core)
 **Goal:** Enable secure onboarding and revenue configuration for B2B partners (Digital Wallets).
@@ -75,7 +75,7 @@
 *   **Deliverables:** Self-Healing Docker, 100% Test Pass Rate (Backend), Idempotency Fix.
 
 ### Phase 2: Integration & The "Last Mile" (v1.0-RC2)
-*   **Status:** 🟡 **IN PROGRESS**
+*   **Status:** ✅ **COMPLETED**
 *   **Focus:** SP-01, OM-05.
 *   **Goal:** Verify "Front Door" connectivity (Consumer -> RabbitMQ -> Backend).
 

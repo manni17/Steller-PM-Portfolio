@@ -20,7 +20,7 @@ This document tracks tactical bugs, code smells, and configuration gaps identifi
 | ID | Issue | Impact | Remediation Plan | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **DEBT-01** | **API Port Ambiguity** | Integration tests fail due to confusion between Admin (`5091`) and Consumer (`5092`) ports. | Update `docker-compose` to use descriptive internal hostnames or standardize documentation. | `[RESOLVED]` |
-| **DEBT-02** | **DTO Case Sensitivity** | `OrderDto` requires PascalCase (`RequestId`) but client often sends camelCase (`requestId`). | Configure `System.Text.Json` to use `PropertyNamingPolicy = JsonNamingPolicy.CamelCase` globally. | `[PENDING]` |
+| **DEBT-02** | **DTO Case Sensitivity** | `OrderDto` requires PascalCase (`RequestId`) but client often sends camelCase (`requestId`). | Configure `System.Text.Json` to use `PropertyNamingPolicy = JsonNamingPolicy.CamelCase` globally. | `[RESOLVED]` - Applied `PropertyNameCaseInsensitive = true` in Program.cs. |
 | **DEBT-03** | **Shared Contracts Path** | `Steller.Api` and `StellerConsumer.Api` reference the same physical `.csproj` file. | Move `SharedContracts` to a private NuGet feed or git submodule for proper versioning. | `[PENDING]` |
 | **DEBT-04** | **Hardcoded Secrets** | Credentials stored in plain text in `.env` and `docker-compose.yml`. | Legacy configuration pattern. | `[CRITICAL]` - Requires Vault implementation. |
 | **DEBT-05** | **Repo Fragmentation** | Integration tests exist outside the main API repository (`Steller/.git`), preventing atomic commits. | Move `Steller.Tests.Integration` into the `Steller` solution structure and git tracking. | `[OPEN]` |
