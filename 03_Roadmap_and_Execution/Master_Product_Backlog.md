@@ -74,6 +74,14 @@
 | **GH-01** | **Walking Skeleton (CI)** | As a Tech Lead, I want a GitHub Action to build and test code on every push to prove "Always Deployable" status. | **P0** | `v1.0-RC` | `[✅]` |
 | **GH-02** | **OSS Licensing** | As a Legal Compliance Officer, I want an MIT License file in the repository to clearly define usage rights. | **P0** | `v1.0-RC` | `[✅]` |
 | **GH-03** | **Social Proof (Badges)** | As a Recruiter, I want to see "Passing" status badges on the README to instantly trust the project's health. | **P1** | `v1.0-RC` | `[ ]` |
+| **GH-04** | **Strict Mode Compliance** | As an Architect, I want the CI build to fail on compiler warnings (CS8618) to enforce "Zero Defect" code quality. | **P0** | `v1.0-RC` | `[✅]` |
+
+## 🔴 Module D: Technical Debt & Refactoring
+**Goal:** Improve system maintainability and scalability.
+
+| ID | Feature | User Story | Priority | Release | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **DEBT-06** | **Async Pagination** | As a System Architect, I want to refactor `PagedListResponse.Create` to be `CreateAsync` to eliminate thread-blocking database calls and improve scalability. | **P3** | `v1.1` | `[ ]` |
 
 ---
 
