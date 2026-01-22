@@ -66,6 +66,15 @@
 | **QA-02** | **Service Mocks** | As a System, I want to simulate external dependencies (Bamboo API) to ensure deterministic test results. | **P1** | `v1.0-RC` | `[✅]` | 2026-01-20 |
 | **QA-03** | **Data Seeding** | As a Developer, I want automated "Fresh Data" injection before each test run to prevent state pollution. | **P1** | `v1.0-RC` | `[✅]` | 2026-01-19 |
 
+## ⚫ Module P: Professionalism & OSS Standards
+**Goal:** Establish enterprise-grade source control practices for recruitment and auditability.
+
+| ID | Feature | User Story | Priority | Release | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **GH-01** | **Walking Skeleton (CI)** | As a Tech Lead, I want a GitHub Action to build and test code on every push to prove "Always Deployable" status. | **P0** | `v1.0-RC` | `[✅]` |
+| **GH-02** | **OSS Licensing** | As a Legal Compliance Officer, I want an MIT License file in the repository to clearly define usage rights. | **P0** | `v1.0-RC` | `[✅]` |
+| **GH-03** | **Social Proof (Badges)** | As a Recruiter, I want to see "Passing" status badges on the README to instantly trust the project's health. | **P1** | `v1.0-RC` | `[ ]` |
+
 ---
 
 ## 📅 Roadmap Phases
