@@ -58,3 +58,24 @@ For the Phase 3 Integration Spike, we apply the **x3 Estimation Rule** to accoun
 *   **x1** for "Ghost" Bugs (Latency/Race Conditions).
 
 **Verdict:** The project is marked **"Ready for UAT,"** shifting the burden of proof from Unit Tests (Code) to System Tests (Integration).
+
+## 6. Phase 3 Pre-Flight: The DevOps Pivot (January 21, 2026)
+
+### ⚠️ The "Legacy Blindness" Trap
+*   **Observation:** During the Partner Onboarding refactor, we initially assumed critical "Wallet Creation" logic was missing because it wasn't in the primary Service. In reality, the endpoints existed in a Controller but were never "wired up."
+*   **Retrospective:** We trusted a superficial code scan over a deep "Archaeological" dig.
+*   **Correction:** Instituted the **Legacy Analysis Protocol**. We now treat Documentation as a "Map" but the Legacy Codebase as the "Terrain." Both must be consulted before declaring a feature "Missing."
+
+### 🚦 The "Green Light" Protocol (Quality Gate)
+*   **Observation:** A refactoring attempt deleted critical methods because we used a "Replace All" strategy without verifying the resulting file structure locally.
+*   **Retrospective:** Relying on the Agent's confidence without mechanical verification (Compilation) introduces regression risk.
+*   **Correction:** We successfully deployed the **"Green Light Protocol"**:
+    1.  **Compile:** `dotnet build` caught the regression immediately (3 Errors).
+    2.  **Verify:** `dotnet test` proved the logic held.
+    3.  **Commit:** Only then did we push.
+*   **Impact:** We prevented a broken build from hitting `main`, saving the team ~30-60 minutes of "Fixing Forward" panic.
+
+### ⚙️ Strict Mode Engineering
+*   **Decision:** Enabled `TreatWarningsAsErrors=true` in CI.
+*   **Outcome:** Forced us to fix 37+ warnings (Null Reference, Async without Await) instead of ignoring them.
+*   **Takeaway:** High Standards are "Painful but Profitable." By fixing the `Async` warnings, we identified legitimate scalability bottlenecks (Synchronous Database calls) and logged them as technical debt (`DEBT-06`) rather than letting them rot.
