@@ -29,6 +29,10 @@ Steller is a unified middleware platform that simplifies the global supply chain
 *   **Quality Assurance:** Results from "Happy Path" validation testing.
 *   **Launch Dashboard:** SQL queries used to monitor the "Time to First Transaction" KPI.
 
+## 💻 Source Code
+*   **Backend Middleware:** [manni17/steller-backend](https://github.com/manni17/steller-backend) - Core API, Event Bus, and Database.
+*   **Consumer Service:** [manni17/steller-consumer](https://github.com/manni17/steller-consumer) - Order Fulfillment Microservice.
+
 ---
 
 ## 🛠️ Tech Stack & Context

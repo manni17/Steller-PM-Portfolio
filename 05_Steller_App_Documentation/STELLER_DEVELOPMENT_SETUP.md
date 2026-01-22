@@ -19,10 +19,13 @@ This guide provides instructions for setting up the Steller system on your local
 
 ## Getting Started
 
-### 1. Clone the Repository
+### 1. Clone the Repositories
 ```bash
-git clone <your-repository-url>
-cd <repository-root>
+# Clone the Backend (Core Platform)
+git clone https://github.com/manni17/steller-backend.git
+
+# Clone the Consumer (Fulfillment Service)
+git clone https://github.com/manni17/steller-consumer.git
 ```
 
 ### 2. Project Structure

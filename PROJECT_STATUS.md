@@ -26,7 +26,7 @@
 | **04_Launch_Metrics** | Write "Happy Path" SQL Validation Queries | `04_Launch_and_Metrics/Launch_Validation_Report.md` | ✅ **Done** | P1 |
 | | Security Audit Response Memo | `04_Launch_and_Metrics/Security_Remediation_Memo.md` | ✅ **Done** | P1 |
 | | Strategic Retrospective | `04_Launch_and_Metrics/Strategic_Retrospective.md` | ✅ **Done** | P1 |
-| **05_Presentation** | GitHub Repository Setup | URL (TBD) | 📅 Backlog | P0 |
+| **05_Presentation** | GitHub Repository Setup | [Backend](https://github.com/manni17/steller-backend) / [Consumer](https://github.com/manni17/steller-consumer) | ✅ **Done** | P0 |
 | | Notion Portfolio Page (Narrative) | URL (TBD) | 📅 Backlog | P0 |
 
 ## Legend
