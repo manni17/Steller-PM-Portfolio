@@ -23,7 +23,7 @@
 | ID | Feature | User Story | ROI / Value (The "Why") | Priority | Release | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **SEC-01** | **HMAC Request Signing** | As Architect, I want request signatures. | **Risk:** Prevents Replay Attacks & Tampering. | **P0** | `v1.0` | `[✅]` |
-| **SEC-02** | **Blind PIN Storage** | As SecEng, I want encrypted PINs. | **Compliance:** Meets PCI-DSS/Data Privacy standards. | **P0** | `v1.0` | `[ ]` |
+| **SEC-02** | **Blind PIN Storage** | As SecEng, I want encrypted PINs. | **Compliance:** Meets PCI-DSS/Data Privacy standards. | **P0** | `v1.0` | `[✅]` |
 | **PM-01** | **Partner Onboarding** | As Admin, create partners with secure creds. | **Revenue:** Enables bringing B2B partners live. | **P0** | `v1.0` | `[✅]` |
 
 ## 💰 Module B: Global Catalog & Profitability
@@ -43,6 +43,10 @@
 | **OM-01** | **Fulfillment Engine** | As System, process "Pending" orders. | **Core:** The primary revenue generating function. | **P0** | `v1.0` | `[✅]` |
 | **OM-02** | **Resilient Retry** | As System, retry failed calls (3x). | **Reliability:** Recovers 99% of transient network errors. | **P0** | `v1.0` | `[✅]` |
 | **OM-05** | **Consumer API Ingestion** | As Partner, POST /orders. | **Integration:** The "Front Door" for revenue. | **P0** | `v1.0` | `[✅]` |
+| **SEC-03** | **Partner Self-Service** | As Partner, view my own API keys. | **Efficiency:** Reduces admin support overhead. | **P2** | `v1.1` | `[ ]` |
+| **WEB-01** | **Webhook Engine** | As Partner, get POST callbacks on status. | **Revenue:** Speeds up partner integration. | **P1** | `v1.1` | `[ ]` |
+| **MON-01** | **Health Dashboard** | As Admin, see live Bamboo/Balance status. | **Support:** Reduces OpEx for troubleshooting. | **P2** | `v1.1` | `[ ]` |
+| **FIN-01** | **Low Balance Alerts** | As Partner, get email when wallet < $500. | **Churn:** Prevents service interruption. | **P2** | `v1.1` | `[ ]` |
 
 ---
 
@@ -50,12 +54,14 @@
 
 ### Phase 1: Reliability & Engine (v1.0-RC)
 *   **Status:** ✅ **COMPLETED**
-*   **Key Win:** 100% Test Pass Rate, Dockerized Environment.
+*   **Focus:** Dockerization, Auto-Sync, 100% Test Pass Rate.
 
 ### Phase 2: Commercial Foundation (v1.0-Launch)
 *   **Status:** 🟡 **IN PROGRESS**
-*   **Focus:** Security (HMAC), Profitability (Auto-Sync), Onboarding.
+*   **Focus:** Security (HMAC), Data Privacy (Blind PINs), Admin Secret UI.
 *   **Goal:** Ready for first Real-Money Partner.
 
 ### Phase 3: Enterprise Growth (v1.1)
-*   **Focus:** Webhooks, FX Buffer, Advanced Reporting.
+*   **Status:** 📅 **BACKLOG**
+*   **Focus:** Webhooks, Operational Monitoring, Wallet Notifications.
+*   **Goal:** Scale to 5+ active high-volume partners.
