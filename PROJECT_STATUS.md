@@ -31,7 +31,8 @@
 | **06_Feature_Enhancement** | Auto-Sync & Profitability Guardrails | `Steller_code/Steller.Api/Services/` | ✅ **Done** | P0 |
 | **07_Security_Hardening** | HMAC Request Signing (Consumer API) | `Steller_code/StellerConsumer/` | ✅ **Done** | P0 |
 | **08_Encryption_Layer** | Blind PIN Storage (SEC-02) | `Steller_code/Steller/` | ✅ **Done** | P0 |
-| **09_Process_Improvement** | **Retrospective Actions (Phase 1 -> 2)** | `GEMINI.md` | ✅ **Done** | P1 |
+| **09_Security_Hardening** | CORS Whitelisting & Credential Hardening (SEC-04) | `Steller_code/` | ✅ **Done** | P0 |
+| **10_Process_Improvement** | **Retrospective Actions (Phase 1 -> 2)** | `GEMINI.md` | ✅ **Done** | P1 |
 | | Codify "Schema-First" & "Infra-Integrity" Rules | `GEMINI.md` | ✅ **Done** | P1 |
 | | Update Risk Registry with Operational Risks | `Risk_Registry.md` | ✅ **Done** | P1 |
 

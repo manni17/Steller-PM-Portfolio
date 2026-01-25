@@ -23,7 +23,7 @@ This document tracks tactical bugs, code smells, and configuration gaps identifi
 | **DEBT-02** | **DTO Case Sensitivity** | `OrderDto` requires PascalCase (`RequestId`) but client often sends camelCase (`requestId`). | Configure `System.Text.Json` to use `PropertyNamingPolicy = JsonNamingPolicy.CamelCase` globally. | `[RESOLVED]` - Applied `PropertyNameCaseInsensitive = true` in Program.cs. |
 | **DEBT-03** | **Shared Contracts Path** | `Steller.Api` and `StellerConsumer.Api` reference the same physical `.csproj` file. | Move `SharedContracts` to a private NuGet feed or git submodule for proper versioning. | `[PENDING]` |
 | **DEBT-04** | **Hardcoded Secrets** | Credentials stored in plain text in `.env` and `docker-compose.yml`. | Legacy configuration pattern. | `[RESOLVED]` - Implemented SEC-02. |
-| **DEBT-05** | **Repo Fragmentation** | Integration tests exist outside the main API repository (`Steller/.git`), preventing atomic commits. | Move `Steller.Tests.Integration` into the `Steller` solution structure and git tracking. | `[OPEN]` |
+| **DEBT-05** | **Repo Fragmentation** | Integration tests exist outside the main API repository (`Steller/.git`), preventing atomic commits. | Move `Steller.Tests.Integration` into the `Steller` solution structure and git tracking. | `[RESOLVED]` - Consolidated into Steller repository. |
 
 ## 🟢 Documentation Gaps
 

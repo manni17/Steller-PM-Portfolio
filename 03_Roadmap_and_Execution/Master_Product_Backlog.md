@@ -44,9 +44,9 @@
 | **OM-02** | **Resilient Retry** | As System, retry failed calls (3x). | **Reliability:** Recovers 99% of transient network errors. | **P0** | `v1.0` | `[✅]` |
 | **OM-05** | **Consumer API Ingestion** | As Partner, POST /orders. | **Integration:** The "Front Door" for revenue. | **P0** | `v1.0` | `[✅]` |
 | **SEC-03** | **Partner Self-Service** | As Partner, view my own API keys. | **Efficiency:** Reduces admin support overhead. | **P2** | `v1.1` | `[ ]` |
-| **WEB-01** | **Webhook Engine** | As Partner, get POST callbacks on status. | **Revenue:** Speeds up partner integration. | **P1** | `v1.1` | `[ ]` |
+| **SEC-04** | **Credential Hardening** | Rotate DB/JWT secrets & switch SMTP provider. | **Compliance:** Reduces exposure risk. | **P2** | `v1.1` | `[✅]` |
+| **WEB-01** | **Webhook Engine** | As Partner, get POST callbacks on status. | **Revenue:** Speeds up partner integration. | **P1** | `v1.1` | `[✅]` |
 | **MON-01** | **Health Dashboard** | As Admin, see live Bamboo/Balance status. | **Support:** Reduces OpEx for troubleshooting. | **P2** | `v1.1` | `[ ]` |
-| **FIN-01** | **Low Balance Alerts** | As Partner, get email when wallet < $500. | **Churn:** Prevents service interruption. | **P2** | `v1.1` | `[ ]` |
 
 ---
 
