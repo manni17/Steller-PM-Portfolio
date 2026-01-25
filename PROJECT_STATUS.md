@@ -28,6 +28,11 @@
 | | Strategic Retrospective | `04_Launch_and_Metrics/Strategic_Retrospective.md` | ✅ **Done** | P1 |
 | **05_Presentation** | GitHub Repository Setup | [Backend](https://github.com/manni17/steller-backend) / [Consumer](https://github.com/manni17/steller-consumer) | ✅ **Done** | P0 |
 | | Notion Portfolio Page (Narrative) | URL (TBD) | 📅 Backlog | P0 |
+| **06_Feature_Enhancement** | Auto-Sync & Profitability Guardrails | `Steller_code/Steller.Api/Services/` | ✅ **Done** | P0 |
+| **07_Security_Hardening** | HMAC Request Signing (Consumer API) | `Steller_code/StellerConsumer/` | ✅ **Done** | P0 |
+| **08_Process_Improvement** | **Retrospective Actions (Phase 1 -> 2)** | `GEMINI.md` | ✅ **Done** | P1 |
+| | Codify "Schema-First" & "Infra-Integrity" Rules | `GEMINI.md` | ✅ **Done** | P1 |
+| | Update Risk Registry with Operational Risks | `Risk_Registry.md` | ✅ **Done** | P1 |
 
 ## Legend
 *   ✅ **Done**: Artifact is created, reviewed, and locked.
@@ -38,3 +43,8 @@
 - Status: **READY FOR UAT** (Integration Validation Required)
 - Reliability: 100% (Based on automated test suite)
 - Deployability: Single-command (Docker Compose)
+
+## Recent Enhancement: Auto-Sync & Profitability Protection
+- **Feature**: Automatic partner price recalculation when supplier costs change during catalog sync
+- **Impact**: Eliminates financial risk from stale partner pricing, maintains profitability margins
+- **Implementation**: Enhanced PartnerProductPricingService and integrated with BrandService

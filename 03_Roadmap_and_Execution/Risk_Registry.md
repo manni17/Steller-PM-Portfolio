@@ -18,6 +18,8 @@ This document identifies potential threats to the Steller platform and defines t
 | **R-04** | **Security** | PII/Secret Leakage: Exposure of Card PINs or Partner API Keys via DB leak. | Critical | Low | **Encryption at Rest:** Implementation of "Blind Storage" policy. Sensitive fields are encrypted at the application layer before database persistence. |
 | **R-05** | **Regulatory** | AML/Fraud: Exploitation of gift card liquidity for money laundering. | Critical | Low | **Velocity Limits:** Enforced rate limiting and volume caps per partner. Transactions exceeding $10k/day trigger manual audit flags. |
 | **R-06** | **Operational** | Environment Drift: Discrepancies between local dev and production environments. | Medium | High | `[MITIGATED]` **Infrastructure as Code:** Unified Docker Compose deployment ensures dev/prod parity and eliminates "works on my machine" bottlenecks. |
+| **R-07** | **Operational** | **Infrastructure Drift:** Dockerfiles becoming stale due to code refactoring (e.g., moved projects). | Medium | High | **"Green Light" Path Check:** Explicit verification of `COPY` paths in Dockerfiles against the file system before build recommendations. |
+| **R-08** | **Technical** | **Schema/Code Mismatch:** Code expecting columns that don't exist yet, causing runtime crashes. | High | Medium | **Schema-First Verification:** Explicit `dotnet ef migrations list` check before feature implementation to ensure data layer readiness. |
 
 ---
 
