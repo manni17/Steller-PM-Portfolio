@@ -78,6 +78,36 @@ Mississauga, ON | +1 (416) 779-6796 | mhnd.mkshf@gmail.com | [LinkedIn URL]
         *   **Action:** Directed the implementation of an automated Black-Box test suite (xUnit/WireMock) and architected a custom `SeedOrder` test harness to isolate fulfillment logic. Identified and remediated a critical correlation ID (`RequestId`) overwrite bug.
         *   **Result:** Reached a **100% automated test pass rate** (9/9 critical scenarios), eliminated double-billing liability, and reduced infrastructure recovery time (MTTR) to under 5 minutes.
 
+*   **Metric:** **Engineered Multi-Agent AI Workflow (Planner-Executor Pattern).**
+    *   **S.O.A.R:**
+        *   **Situation:** Technical debt remediation velocity was too slow to meet live production deadlines.
+        *   **Action:** Architected a bi-directional AI workflow (Gemini as Architect, Qwen as Coder), utilizing strict context management (`.md` logs) and chain-of-thought prompting to automate complex refactoring tasks.
+        *   **Result:** Automated 80% of technical debt remediation (e.g., bulk API pathing fixes) and reduced sprint cycle time from days to hours.
+
+*   **Metric:** **Deployed "Test-Driven" AI Guardrails.**
+    *   **S.O.A.R:**
+        *   **Situation:** Generative AI output was prone to "hallucinations" and regression bugs in critical pathing logic.
+        *   **Action:** Implemented a mandatory verification protocol where AI-generated code was rejected unless it passed automated Black-Box Integration Tests (`dotnet test`) and Docker health checks.
+        *   **Result:** Achieved "Zero Regression" deployments for the Authentication and Order Fulfillment modules.
+
+*   **Metric:** **Optimized AI Developer Experience (DevEx).**
+    *   **S.O.A.R:**
+        *   **Situation:** Slow feedback loops (25-minute builds) were rendering AI coding agents ineffective.
+        *   **Action:** Engineered a "Hot Reload" infrastructure using Docker multi-stage builds and bind mounts, specifically optimizing the environment for rapid AI iteration.
+        *   **Result:** Reduced build time to <10 seconds, enabling real-time "Chat-to-Code" execution.
+
+*   **Metric:** **Multi-Model Resource Optimization (Cost/Token Efficiency).**
+    *   **S.O.A.R:**
+        *   **Situation:** AI operational costs and latency were escalating due to single-model dependency.
+        *   **Action:** Reduced R&D operational costs by 40% by engineering a tiered LLM workflow; utilized high-reasoning models (Gemini 1.5 Pro) for architectural planning and system design while offloading high-volume code generation to cost-efficient models (Qwen 2.5).
+        *   **Result:** Maintained "Lead Architect" design quality while maximizing coding velocity and minimizing API costs.
+
+*   **Metric:** **Strategic Task Delegation (Lead-and-Execute Pattern).**
+    *   **S.O.A.R:**
+        *   **Situation:** Complex refactoring required both high-level system understanding and low-level syntax precision.
+        *   **Action:** Architected a "Lead-and-Execute" deployment pipeline, assigning complex root-cause analysis and API schema design to strategic models, while automating boilerplate and unit test generation through specialized coding models.
+        *   **Result:** Maximized development velocity by aligning model strengths with task complexity.
+
 ### LENS: PRODUCT & GROWTH (Use for Module A)
 *   **Metric:** **Scaled platform to $120K ARR within 24 months.**
     *   **S.O.A.R:**

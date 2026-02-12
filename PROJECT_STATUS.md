@@ -35,6 +35,10 @@
 | **10_Process_Improvement** | **Retrospective Actions (Phase 1 -> 2)** | `GEMINI.md` | ✅ **Done** | P1 |
 | | Codify "Schema-First" & "Infra-Integrity" Rules | `GEMINI.md` | ✅ **Done** | P1 |
 | | Update Risk Registry with Operational Risks | `Risk_Registry.md` | ✅ **Done** | P1 |
+| **11_Enterprise_Growth** | Webhook Engine (WEB-01) | `Steller_code/Steller/Steller.Api/Services/` | ✅ **Done** | P1 |
+| | Dashboard Resilience (MON-02) | `Steller_code/steller-admin-dashboard/` | ✅ **Done** | P0 |
+| **12_Bug_Fixing** | **API Path Correction** | `steller-admin-dashboard/` | ✅ **Done** | P0 |
+| | Fix `/api` prefix on all frontend services | `services.js` | ✅ **Done** | P0 |
 
 ## Legend
 *   ✅ **Done**: Artifact is created, reviewed, and locked.
